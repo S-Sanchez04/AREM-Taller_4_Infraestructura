@@ -24,19 +24,23 @@ El modelo se estructura de forma secuencial desde la interacción de clientes (u
 Se identificó que Macondo no posee servidores locales ni herramientas avanzadas para los flujos en el bussiness.
 
 ## 📈 Diagrama final entregado
-![Mapa de Infraestructura de Macondo](Mapa%20Infraestructura%20Macondo.drawio.png)
-[📄 Versión PDF](./Mapa%20Infraestructura%20Macondo.drawio.pdf) 
+![Mapa de Infraestructura de Macondo](Diagrama%20de%20Infraestructura%20Macondo.drawio.png)
+
+[📄 Versión PDF](./Diagrama%20de%20Infraestructura%20Macondo.drawio.pdf) 
 
 ## 📋 Tabla de actores, entidades o componentes (si aplica)
 
-| Nombre del elemento  | Tipo        | Descripción                                    | Responsable |
-|----------------------|-------------|------------------------------------------------|-------------|
-| Usuarios             | Actor       | Clientes que solicitan proyectos               | Cliente |
-| Requerimientos       | Documento   | Archivos Word/Excel almacenados en OneDrive    | Empresa |
-| Gestión de proyectos | Herramienta | Organización de tareas en Jira                 | Empresa |
-| Comunicación         | Canal       | Intercambio por correo y WhatsApp              | Cliente/Empresa |
-| Desarrollo           | Repositorio | Control de versiones con Git                   | Empresa |
-| Despliegue y entrega | Servicio    | Publicación de aplicaciones en la nube         | Empresa |
+| Nombre del elemento | Tipo             | Descripción                                                                 | Responsable              |
+|---------------------|------------------|-----------------------------------------------------------------------------|--------------------------|
+| Clientes            | Actor externo    | Usuarios que acceden a la web de Macondo Softwares a través de Internet.    | Externo (Usuarios)       |
+| Dominio (DNS)       | Infraestructura  | Servicio DNS que traduce `macondosoftwares.com` a una dirección IP.         | Proveedor de DNS / TI    |
+| Load Balancer       | Infraestructura  | Distribuye el tráfico de clientes hacia el servidor web (WordPress).        | Área TI / Proveedor nube |
+| Firewall            | Seguridad        | Filtra el tráfico entre la zona pública, DMZ y privada.                     | Área TI / Seguridad      |
+| App Web (WordPress) | Aplicación       | Sitio web corporativo para interacción con clientes y formularios.          | Área Web / Marketing TI  |
+| Base de Datos       | Datos / Infra    | Almacena la información del sitio web (usuarios, formularios, contenido).   | Área TI                  |
+| Backups de Data     | Infraestructura  | Sistema de respaldo periódico de la base de datos y archivos del sitio.     | Área TI                  |
+| Logs                | Datos / Seguridad| Registros de actividad y auditoría del sistema para monitoreo y análisis.   | Área TI / Seguridad      |
+
 
 ## 🔍 Investigación complementaria
 ### Tema investigado:
